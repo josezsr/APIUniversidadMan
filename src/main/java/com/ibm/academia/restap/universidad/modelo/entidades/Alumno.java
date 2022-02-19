@@ -18,15 +18,13 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-//@Table(name="alumnos",schema="universidad")
-@Table(name="alumnos")
-
+@Table(name="alumnos",schema="universidad")
 @PrimaryKeyJoinColumn(name="persona_id")
 public class Alumno extends Persona
 {
 
 	@ManyToOne(optional=true , cascade= {CascadeType.PERSIST,CascadeType.MERGE},fetch = FetchType.LAZY)
-	@JoinColumn(name="carrera_id",foreignKey=@ForeignKey(name="FK_1_CARRERA_ID"))
+	@JoinColumn(name="carrera_id",foreignKey=@ForeignKey(name="FK_CARRERA_ID"))
 	private Carrera carrera;
 	
 	public Alumno(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion) {

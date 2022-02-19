@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.academia.restap.universidad.enumeradores.TipoEmpleado;
 import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
-import com.ibm.academia.restap.universidad.repositorios.AlumnoRepository;
 import com.ibm.academia.restap.universidad.repositorios.EmpleadoRepository;
 import com.ibm.academia.restap.universidad.repositorios.PersonaRepository;
 

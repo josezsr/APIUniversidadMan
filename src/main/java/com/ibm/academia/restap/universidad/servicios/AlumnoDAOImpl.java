@@ -10,7 +10,6 @@ import com.ibm.academia.restap.universidad.excepciones.NotFoundException;
 import com.ibm.academia.restap.universidad.modelo.entidades.Alumno;
 import com.ibm.academia.restap.universidad.modelo.entidades.Carrera;
 import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
-import com.ibm.academia.restap.universidad.repositorios.AlumnoRepository;
 import com.ibm.academia.restap.universidad.repositorios.PersonaRepository;
 import java.util.Optional;
 

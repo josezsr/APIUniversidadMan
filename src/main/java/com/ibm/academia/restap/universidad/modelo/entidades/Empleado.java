@@ -3,8 +3,6 @@ package com.ibm.academia.restap.universidad.modelo.entidades;
 import java.math.BigDecimal;
 
 
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,9 +24,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-
-//@Table(name="empleados",schema="universidad")
-@Table(name="empleados")
+@Table(name="empleados",schema="universidad")
 @PrimaryKeyJoinColumn(name="persona_id")
 public class Empleado extends Persona
 {
@@ -40,7 +36,7 @@ public class Empleado extends Persona
 	private TipoEmpleado tipoEmpleado;
 	
 	@OneToOne(optional = true, cascade= CascadeType.ALL)
-	@JoinColumn(name="pabellon_id", foreignKey=@ForeignKey(name="FK_1_PABELLON_ID"))
+	@JoinColumn(name="pabellon_id", foreignKey=@ForeignKey(name="FK_PABELLON_ID"))
 	private Pabellon pabellon;
 	
 	public Empleado(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion,BigDecimal sueldo,TipoEmpleado tipoEmpelado) {

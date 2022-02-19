@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -20,15 +19,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.academia.restap.universidad.excepciones.NotFoundException;
 import com.ibm.academia.restap.universidad.modelo.entidades.Carrera;
-import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
-import com.ibm.academia.restap.universidad.servicios.AlumnoDAO;
 import com.ibm.academia.restap.universidad.servicios.CarreraDAO;
-import com.ibm.academia.restap.universidad.servicios.PersonaDAO;
 
 @RestController
 @RequestMapping("/restapi")

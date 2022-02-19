@@ -17,6 +17,11 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.Valid;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,26 +34,27 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-//@Table(name="carreras", schema="universidad")
-@Table(name="carreras")
-
+@Table(name="carreras", schema="universidad")
 public class Carrera implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	
+	@NotNull
+	@NotEmpty
 	@Column(name ="nombre",nullable=false,unique= true, length= 80)
 	private String nombre;
 	
+	@Positive(message = "El valor debe ser mayor a cero")
 	@Column(name = "cantidad_materias")
 	private Integer cantidadMaterias;
 	
 	@Column(name = "cantidad_anios")
 	private Integer cantidadAnios;
 	
-	
+	@NotNull
+	@NotEmpty
 	@Column(name="usuario_creacion",nullable=false)
 	private String usuarioCreacion;
 	
@@ -59,9 +65,11 @@ public class Carrera implements Serializable {
 	private Date fechaModificacion;
 	
 	@OneToMany(mappedBy="carrera",fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"carrera"})
 	private Set<Alumno> alumnos;
 	
 	@ManyToMany(mappedBy="carreras",fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"carreras"})
 	private Set<Profesor> profesores;
 	
 

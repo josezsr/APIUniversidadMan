@@ -1,8 +1,5 @@
 package com.ibm.academia.restap.universidad.servicios;
 
-import java.util.Optional;
-
-import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
 

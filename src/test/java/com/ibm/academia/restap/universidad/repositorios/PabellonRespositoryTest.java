@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.ibm.academia.restap.universidad.datos.DatosDumy;
-import com.ibm.academia.restap.universidad.modelo.entidades.Carrera;
 import com.ibm.academia.restap.universidad.modelo.entidades.Pabellon;
 
 

@@ -36,9 +36,9 @@ public class TestsEmpleadoJPQL  implements CommandLineRunner{
 	public void run(String... args) throws Exception 
 	{  
 		
-/*
-		Direccion direccionEmpelado = new Direccion("siega","276a","417a","454157a","137wa","puebla3");
-		Persona empleado = new Empleado(null, "marta", "guerraz", "1235a819", "jose7", direccionEmpelado,bd,TipoEmpleado.valueOf("ADMINISTRATIVO"));
+		
+		/*Direccion direccionEmpelado = new Direccion("siega","276a","417a","454157a","137wa","puebla3");
+		Persona empleado = new Empleado(null, "marta", "guerr", "1238191", "jose7", direccionEmpelado,bd,TipoEmpleado.valueOf("ADMINISTRATIVO"));
 		Persona personaEmpleado = personaDao.guardar(empleado);
 		System.out.println(personaEmpleado.toString());*/
 		
