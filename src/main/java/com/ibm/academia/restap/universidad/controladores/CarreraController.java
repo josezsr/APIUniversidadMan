@@ -96,7 +96,7 @@ public class CarreraController {
 		carreraDao.eliminarPorId(carreraId);
 		return new ResponseEntity<>("La carrera con id: " + carreraId + " fue eliminada", HttpStatus.NO_CONTENT);
 	}
-	/*
+	
 	@PutMapping("/carrera/actualizar/carreraId/{carreraId}")
 	public ResponseEntity<?> actualizar(@PathVariable Long carreraId, @Valid @RequestBody Carrera carrera, BindingResult result)
 	{
@@ -123,5 +123,5 @@ public class CarreraController {
 		}
 		
 		return new ResponseEntity<Carrera>(carreraActualizada, HttpStatus.OK);
-	}*/
+	}
 }
