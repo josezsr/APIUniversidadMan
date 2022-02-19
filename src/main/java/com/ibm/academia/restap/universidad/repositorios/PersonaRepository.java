@@ -2,18 +2,18 @@ package com.ibm.academia.restap.universidad.repositorios;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.stereotype.Repository;
 
 import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
 import java.util.Optional;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.Query;
 
-
+@Primary
 @NoRepositoryBean
-@Repository("repositorioPersona")
 public interface PersonaRepository extends CrudRepository<Persona, Long>
 {
-        @Query("select p from Persona p where p.nombre= ?1 and p.apellido = ?2")
+    @Query("select p from Persona p  where p.nombre= ?1 and p.apellido = ?2")
 	public Optional<Persona> buscarPersonaNombreYApellido(String nombre,String apellido);
 	
 	@Query("select p from Persona p where p.dni=?1")

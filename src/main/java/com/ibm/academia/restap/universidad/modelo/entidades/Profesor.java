@@ -20,7 +20,8 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "profesores", schema = "universidad")
+//@Table(name = "profesores", schema = "universidad")
+@Table(name = "profesores")
 @PrimaryKeyJoinColumn(name = "persona_id")
 public class Profesor extends Persona
 {
@@ -28,16 +29,19 @@ public class Profesor extends Persona
 
 	@Column(name = "sueldo")
 	private BigDecimal sueldo;
-	
+	 
 	
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(
-			name = "profesor_carrera", schema = "universidad",
+			//name = "profesor_carrera", schema = "universidad"
+			name = "profesor_carrera",
+			
 			joinColumns = @JoinColumn(name = "profesor_id"),
 			inverseJoinColumns = @JoinColumn(name = "carrera_id")
 			)
 	private Set<Carrera> carreras;
+	
 	
 	public Profesor(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion, BigDecimal sueldo) 
 	{
@@ -46,9 +50,6 @@ public class Profesor extends Persona
 	}
 	
 	
-	public Profesor(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion) {
-	}
-
 
 	@Override
 	public String toString() 
@@ -60,6 +61,31 @@ public class Profesor extends Persona
 		builder.append("]");
 		return builder.toString();
 	}
+	
+
+
+	public BigDecimal getSueldo() {
+		return sueldo;
+	}
+
+
+
+	public void setSueldo(BigDecimal sueldo) {
+		this.sueldo = sueldo;
+	}
+
+
+
+	public Set<Carrera> getCarreras() {
+		return carreras;
+	}
+
+
+
+	public void setCarreras(Set<Carrera> carreras) {
+		this.carreras = carreras;
+	}
+
 
 
 	private static final long serialVersionUID = 8782688562007738860L;

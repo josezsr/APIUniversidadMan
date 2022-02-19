@@ -1,19 +1,21 @@
 package com.ibm.academia.restap.universidad;
 
 
-//import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-/*
+
 import com.ibm.academia.restap.universidad.modelo.entidades.Carrera;
 import com.ibm.academia.restap.universidad.servicios.CarreraDAO;
-*/
+
 @Component
 public class TestCarrerasJPQL implements CommandLineRunner{
-	/*
+	
 	@Autowired 
 	private CarreraDAO carreraDao;
-*/
+
 	@Override
 	public void run(String... args) throws Exception {
 		
@@ -24,7 +26,7 @@ public class TestCarrerasJPQL implements CommandLineRunner{
         Carrera licSistemas = new Carrera(null, "Licenciatura en Sistemas", 40, 4, "nsegura");
         Carrera licTurismo = new Carrera(null, "Licenciatura en Turismo", 42, 4, "nsegura");
         Carrera licYoga = new Carrera(null, "Licenciatura en Yoga", 25, 3, "nsegura");
-        Carrera licenRecursos = new Carrera(null, "Licenciatura en Recursos Humanos ", 33, 1, "nsegura");*/
+        Carrera licenRecursos = new Carrera(null, "Licenciatura en contaduria ", 33, 1, "nsegura");*/
         		
         		
         /*carreraDao.guardar(ingSistemas);
@@ -42,11 +44,12 @@ public class TestCarrerasJPQL implements CommandLineRunner{
 		/*List<Carrera> carrerasIgnoreCaseUno = (List<Carrera>) carreraDao.findCarrerasByNombreContainsIgnoreCase("SISTEMAS");
 		carrerasIgnoreCaseUno.forEach(System.out::println);*/
 		
+		//Query Method
 		/*List<Carrera> carrerasIgnoreCaseUno = (List<Carrera>) carreraDao.findCarrerasByCantidadAniosAfter(4);
 		carrerasIgnoreCaseUno.forEach(System.out::println);*/
 		
 		/*Iterable<Carrera> carreras =  carreraDao.findCarrerasByNombreContains("Sistemas");
-			System.out.println(carreras.toString());*/
+		System.out.println(carreras.toString());*/
 	}
 
 	

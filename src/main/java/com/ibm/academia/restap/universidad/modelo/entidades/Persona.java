@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -27,7 +26,9 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="personas",schema="universidad")
+//@Table(name="personas",schema="universidad")
+@Table(name="personas")
+
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Persona implements Serializable 
 {

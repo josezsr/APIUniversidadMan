@@ -1,4 +1,4 @@
-package com.ibm.academia.restap.universidad.modelo.entidades;
+ package com.ibm.academia.restap.universidad.modelo.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,7 +29,8 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="aulas", schema="universidad")
+@Table(name="aulas" )
+//@Table(name="aulas", schema="universidad")
 public class Aula implements Serializable
 {
 	@Id
@@ -128,6 +129,77 @@ public class Aula implements Serializable
 	private void antesActualizar ()
 	{
 		 this.fechaModificacion = new Date();
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Integer getNumeroAula() {
+		return numeroAula;
+	}
+
+
+	public void setNumeroAula(Integer numeroAula) {
+		this.numeroAula = numeroAula;
+	}
+
+
+	public String getMedidas() {
+		return medidas;
+	}
+
+
+	public void setMedidas(String medidas) {
+		this.medidas = medidas;
+	}
+
+
+	public Integer getCantidadPupitres() {
+		return cantidadPupitres;
+	}
+
+
+	public void setCantidadPupitres(Integer cantidadPupitres) {
+		this.cantidadPupitres = cantidadPupitres;
+	}
+
+
+	public TipoPizarron getTipoPizarron() {
+		return tipoPizarron;
+	}
+
+
+	public void setTipoPizarron(TipoPizarron tipoPizarron) {
+		this.tipoPizarron = tipoPizarron;
+	}
+
+
+	public String getUsuarioCreacion() {
+		return usuarioCreacion;
+	}
+
+
+	public void setUsuarioCreacion(String usuarioCreacion) {
+		this.usuarioCreacion = usuarioCreacion;
+	}
+
+
+	public Pabellon getPabellon() {
+		return pabellon;
+	}
+
+
+	public void setPabellon(Pabellon pabellon) {
+		this.pabellon = pabellon;
 	}
 
 

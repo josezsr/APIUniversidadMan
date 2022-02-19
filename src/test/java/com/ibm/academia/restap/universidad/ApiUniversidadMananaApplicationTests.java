@@ -8,6 +8,13 @@ class ApiUniversidadMananaApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
+		//GWT
+		
+		
+		//given
+	//	Integer valorA=7;
+		
 	}
 
 }

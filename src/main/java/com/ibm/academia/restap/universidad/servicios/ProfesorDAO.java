@@ -1,5 +1,8 @@
 package com.ibm.academia.restap.universidad.servicios;
 
-public interface ProfesorDAO {
+import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
+
+public interface ProfesorDAO extends PersonaDAO
+{
 
 }

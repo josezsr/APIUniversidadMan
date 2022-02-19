@@ -27,7 +27,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 
-@Table(name="empleados",schema="universidad")
+//@Table(name="empleados",schema="universidad")
+@Table(name="empleados")
 @PrimaryKeyJoinColumn(name="persona_id")
 public class Empleado extends Persona
 {
@@ -39,7 +40,7 @@ public class Empleado extends Persona
 	private TipoEmpleado tipoEmpleado;
 	
 	@OneToOne(optional = true, cascade= CascadeType.ALL)
-	@JoinColumn(name="pabellon_id", foreignKey=@ForeignKey(name="FK_PABELLON_ID"))
+	@JoinColumn(name="pabellon_id", foreignKey=@ForeignKey(name="FK_1_PABELLON_ID"))
 	private Pabellon pabellon;
 	
 	public Empleado(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion,BigDecimal sueldo,TipoEmpleado tipoEmpelado) {
@@ -48,14 +49,9 @@ public class Empleado extends Persona
 		this.tipoEmpleado=tipoEmpelado;
 	}
 
-    public Empleado(BigDecimal sueldo, TipoEmpleado tipoEmpleado, Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion) {
-        super(id, nombre, apellido, dni, usuarioCreacion, direccion);
-        this.sueldo = sueldo;
-        this.tipoEmpleado = tipoEmpleado;
-    }
 	
 
-	public Empleado(Long id, String nombre, String apellido, String dni, String usuarioCreacion, Direccion direccion) {
+	public Empleado() {
 	}
 
 
@@ -93,5 +89,6 @@ public class Empleado extends Persona
 
 
 	private static final long serialVersionUID = -9150775959023226424L;
+
 
 }

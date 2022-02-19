@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,12 +29,15 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name="carreras", schema="universidad")
+//@Table(name="carreras", schema="universidad")
+@Table(name="carreras")
+
 public class Carrera implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	
 	@Column(name ="nombre",nullable=false,unique= true, length= 80)
 	private String nombre;
@@ -43,6 +47,7 @@ public class Carrera implements Serializable {
 	
 	@Column(name = "cantidad_anios")
 	private Integer cantidadAnios;
+	
 	
 	@Column(name="usuario_creacion",nullable=false)
 	private String usuarioCreacion;
@@ -127,7 +132,74 @@ public class Carrera implements Serializable {
 
 
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getCantidadMaterias() {
+		return cantidadMaterias;
+	}
+
+	public void setCantidadMaterias(Integer cantidadMaterias) {
+		this.cantidadMaterias = cantidadMaterias;
+	}
+
+	public Integer getCantidadAnios() {
+		return cantidadAnios;
+	}
+
+	public void setCantidadAnios(Integer cantidadAnios) {
+		this.cantidadAnios = cantidadAnios;
+	}
+
+	public String getUsuarioCreacion() {
+		return usuarioCreacion;
+	}
+
+	public void setUsuarioCreacion(String usuarioCreacion) {
+		this.usuarioCreacion = usuarioCreacion;
+	}
+
+	public Set<Alumno> getAlumnos() {
+		return alumnos;
+	}
+
+	public void setAlumnos(Set<Alumno> alumnos) {
+		this.alumnos = alumnos;
+	}
+
+	public Set<Profesor> getProfesores() {
+		return profesores;
+	}
+
+	public void setProfesores(Set<Profesor> profesores) {
+		this.profesores = profesores;
+	}
+
+
+
+
 	private static final long serialVersionUID = 8385885092001156491L;
+
+
+
+
+	public static Carrera guardar(@Valid Carrera carrera) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	
 }

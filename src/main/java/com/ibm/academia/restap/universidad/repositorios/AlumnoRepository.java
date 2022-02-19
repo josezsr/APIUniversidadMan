@@ -1,11 +1,12 @@
  package com.ibm.academia.restap.universidad.repositorios;
 
 import com.ibm.academia.restap.universidad.modelo.entidades.Persona;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
-@EnableJpaRepositories
+@Primary
 @Repository("repositorioAlumno")
 public interface AlumnoRepository extends PersonaRepository
 {

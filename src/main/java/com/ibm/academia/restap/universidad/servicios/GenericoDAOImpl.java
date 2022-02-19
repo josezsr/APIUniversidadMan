@@ -2,7 +2,7 @@ package com.ibm.academia.restap.universidad.servicios;
 
 import java.util.Optional;
 
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,12 +13,16 @@ public class GenericoDAOImpl<E, R extends CrudRepository<E, Long>> implements Ge
 
  	protected final R repository;
  	
- 	public GenericoDAOImpl(R repository)
+ 	public GenericoDAOImpl(@Qualifier("repositorioAlumno")R repository)
  	{
  		this.repository = repository;
  	}
  	
  	
+	public void user() {
+	}
+
+
 	@Override
 	@Transactional(readOnly = true)
 	public Optional<E> buscarPorId(Long id)
